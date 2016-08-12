@@ -1,33 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
-import { BookDataService, CanDeactivateConfirm } from './shared';
-import { appRouterProviders, routing, GuardFunction } from './app.routing';
+import { appRouterProviders, routing } from './app.routing';
 import { AppComponent } from './app.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { ShoutPipePipe } from './shared/shout-pipe.pipe';
-import { Tooltip } from './shared/tooltip.directive';
-import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BooksModule } from './books';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BookListComponent,
-    ShoutPipePipe,
-    Tooltip,
-    BookDetailComponent
+    AppComponent
   ],
   imports: [
+    BooksModule,
     BrowserModule,
     CommonModule,
-    FormsModule,
-    HttpModule,
     routing
   ],
-  providers: [appRouterProviders, BookDataService, {provide: 'GuardFunction', useValue: GuardFunction}], // CanDeactivateConfirm
+  providers: [appRouterProviders],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

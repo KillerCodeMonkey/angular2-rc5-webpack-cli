@@ -1,9 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Book, BookDataService } from '../shared';
+
+function myTitleValidator(c: FormControl) {
+  return c.value === "TEST" ? { validateTitle: {valid: false} } : null;
+}
 
 @Component({
   selector: 'app-book-edit',
@@ -24,7 +28,7 @@ export class BookEditComponent implements OnInit, OnDestroy {
         this.bookData.getBookByIsbn(params['isbn']).subscribe(book => {
           this.book = book;
           this.formGroup = this.fb.group({
-            'title': [this.book.title, Validators.required]
+            'title': [this.book.title, [Validators.required, myTitleValidator]]
           });
         });
       });

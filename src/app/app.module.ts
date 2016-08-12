@@ -3,10 +3,12 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,4 @@ import { AppComponent } from './app.component';
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule {}

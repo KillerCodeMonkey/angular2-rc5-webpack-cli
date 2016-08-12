@@ -4,13 +4,17 @@ import { BookListComponent } from './book-list';
 import { BookDetailComponent } from './book-detail';
 import { CanDeactivateConfirm } from './shared';
 
+export function GuardFunction() {
+  return confirm('verlassen?');
+}
+
 const appRoutes: Routes = [{
   path: 'books',
   component: BookListComponent
 }, {
   path: 'books/:isbn',
   component: BookDetailComponent,
-  canDeactivate: [CanDeactivateConfirm]
+  canDeactivate: ['GuardFunction']
 }, {
   path: '',
   redirectTo: '/books',

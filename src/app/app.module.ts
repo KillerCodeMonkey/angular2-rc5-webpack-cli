@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { BookDataService, CanDeactivateConfirm } from './shared';
-import { appRouterProviders, routing } from './app.routing';
+import { appRouterProviders, routing, GuardFunction } from './app.routing';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { ShoutPipePipe } from './shared/shout-pipe.pipe';
@@ -27,7 +27,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     HttpModule,
     routing
   ],
-  providers: [appRouterProviders, BookDataService, CanDeactivateConfirm],
+  providers: [appRouterProviders, BookDataService, {provide: 'GuardFunction', useValue: GuardFunction}], // CanDeactivateConfirm
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

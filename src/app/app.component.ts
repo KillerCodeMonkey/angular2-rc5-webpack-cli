@@ -11,4 +11,8 @@ import { BookListComponent } from './book-list';
 export class AppComponent {
   title = 'app works!';
   bookTitle = 'Testitest';
+
+  handleClick(data: String) {
+    console.log('Book title clicked:', data);
+  }
 }

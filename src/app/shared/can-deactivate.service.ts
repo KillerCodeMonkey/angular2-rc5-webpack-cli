@@ -8,9 +8,6 @@ export class CanDeactivateConfirm implements CanDeactivate<BookDetailComponent> 
   constructor() {}
 
   canDeactivate(): boolean {
-    if (confirm('Wirklich verlassen ?')) {
-      return true;
-    }
-    return false;
+    return confirm('Wirklich verlassen ?');
   }
 }

@@ -7,7 +7,7 @@ const appRoutes: Routes = [{
   path: 'books',
   component: BookListComponent
 }, {
-  path: 'books/:id',
+  path: 'books/:isbn',
   component: BookDetailComponent
 }, {
   path: '',

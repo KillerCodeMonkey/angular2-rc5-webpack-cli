@@ -7,7 +7,7 @@ import { Book, BookDataService } from '../shared';
   selector: 'app-book-list',
   templateUrl: 'book-list.component.html',
   styleUrls: ['book-list.component.css'],
-  providers: [BookDataService]
+  providers: []
 })
 export class BookListComponent implements OnInit, OnDestroy {
   @Input('book-title') title: String;

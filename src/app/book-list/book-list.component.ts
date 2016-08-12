@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
+  x = 0;
+  y = 0;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  mouseMoveHandle({
+    clientX,
+    clientY
+  }: MouseEvent) {
+    this.x = clientX;
+    this.y = clientY;
+  }
 }

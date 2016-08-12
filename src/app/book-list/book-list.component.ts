@@ -8,6 +8,41 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class BookListComponent implements OnInit {
   @Input('book-title') title: String;
   @Output('book-title-clicked') titleClicked = new EventEmitter<String>();
+  books = [
+    {
+      'title': 'Design Patterns',
+      'subtitle': 'Elements of Reusable Object-Oriented Software',
+      'isbn': '978-0-20163-361-0',
+      'numPages': 395,
+      'author': 'Erich Gamma / Richard Helm / Ralph E. Johnson / John Vlissides',
+      'publisher': {
+        'name': 'Addison-Wesley',
+        'url': 'http://www.addison-wesley.de/'
+      }
+    },
+    {
+      'title': 'REST und HTTP',
+      'subtitle': 'Entwicklung und Integration nach dem Architekturstil des Web',
+      'isbn': '978-3-86490-120-1',
+      'numPages': 330,
+      'author': 'Stefan Tilkov / Martin Eigenbrodt / Silvia Schreier / Oliver Wolf',
+      'publisher': {
+        'name': 'dpunkt.verlag',
+        'url': 'http://dpunkt.de/'
+      }
+    },
+    {
+      'title': 'Eloquent JavaScript',
+      'subtitle': 'A Modern Introduction to Programming',
+      'isbn': ' 978-1-59327-584-6',
+      'numPages': 472,
+      'author': 'Marijn Haverbeke',
+      'publisher': {
+        'name': 'No Starch Press',
+        'url': 'https://www.nostarch.com/'
+      }
+    }
+  ];
   x = 0;
   y = 0;
 

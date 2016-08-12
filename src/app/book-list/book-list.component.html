@@ -1,6 +1,13 @@
 <p [hidden]="isHidden">
   <a (click)="handleClick()">{{title}}</a> works!
 </p>
+
+<div *ngFor="let book of books">
+  <h3>{{book.title}}</h3>
+  <small>{{book.author}} ({{book.isbn}})</small>
+</div>
+
+
 <button (click)="isHidden=!isHidden">Show and Hide</button>
 
 <!--<div style="height: 400px; width: 400px; border: 1px solid" (mousemove)="x=$event.clientX; y=$event.clientY;"></div>-->

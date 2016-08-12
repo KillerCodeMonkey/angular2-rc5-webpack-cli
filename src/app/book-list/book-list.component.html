@@ -1,5 +1,5 @@
 <p [hidden]="isHidden">
-  <a (click)="handleClick()">{{title}}</a> works!
+  <a (click)="handleClick()">{{title | shoutPipe:"Titel: ":"!!!"}}</a> works!
 </p>
 
 <div *ngFor="let book of books">

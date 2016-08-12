@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { BookDataService } from './shared';
+import { BookDataService, CanDeactivateConfirm } from './shared';
 import { appRouterProviders, routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
@@ -27,7 +27,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     HttpModule,
     routing
   ],
-  providers: [appRouterProviders, BookDataService],
+  providers: [appRouterProviders, BookDataService, CanDeactivateConfirm],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

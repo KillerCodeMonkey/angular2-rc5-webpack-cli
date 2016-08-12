@@ -1,0 +1,7 @@
+<div *ngIf="book">
+  <p>
+    {{book.title}}
+  </p>
+  <a [routerLink]="['/books', book.isbn, 'edit']">bearbeiten</a>
+  <a [routerLink]="['/books']">zurück</a>
+</div>

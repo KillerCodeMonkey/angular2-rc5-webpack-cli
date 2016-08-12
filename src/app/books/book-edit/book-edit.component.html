@@ -1,0 +1,25 @@
+<div *ngIf="book">
+  TEMPLATE DRIVEN
+  <form #form="ngForm" (ngSubmit)="form.valid && handleSubmit(form.value)">
+    <input
+      type="text"
+      [(ngModel)]="book.title"
+      name="title"
+      #title="ngModel"
+      required>
+    <button [disabled]="form.invalid">speichern</button>
+    <div [hidden]="!title.errors?.required || title.pristine">TITEL IST PFLICHT!</div>
+  </form>
+
+  MODEL DRIVEN
+  <form [formGroup]="formGroup" (ngSubmit)="formGroup.valid && handleSubmit(formGroup.value)">
+    <input
+      type="text"
+      formControlName="title"
+      required>
+    <button [disabled]="formGroup.invalid">speichern</button>
+    <div [hidden]="!formGroup.controls.title.errors?.required || formGroup.controls.title.pristine">TITEL IST PFLICHT!</div>
+  </form>
+
+  <a [routerLink]="['/books', book.isbn]">zurück</a>
+</div>

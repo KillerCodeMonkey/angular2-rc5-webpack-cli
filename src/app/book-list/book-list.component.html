@@ -1,3 +1,5 @@
-<p>
+<p [hidden]="isHidden">
   book-list works!
 </p>
+
+<button (click)="isHidden=!isHidden">Show and Hide</button>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
-import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';
 
 import { Book } from '../shared';
 
@@ -43,11 +44,11 @@ export class BookDataService {
     }
   ]
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   getBooks(): Observable<Book[]> {
-    let oberservable = Observable.of(this.books);
-
-    return oberservable;
+    return this.http
+      .get('http://localhost:4730/books')
+      .map(response => response.json());
   }
 }

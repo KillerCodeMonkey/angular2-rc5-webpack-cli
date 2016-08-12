@@ -3,6 +3,8 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import { appRouterProviders, routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { ShoutPipePipe } from './shared/shout-pipe.pipe';
@@ -19,9 +21,10 @@ import { Tooltip } from './shared/tooltip.directive';
     BrowserModule,
     CommonModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [appRouterProviders],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,8 @@ function myTitleValidator(c: FormControl) {
 @Component({
   selector: 'app-book-edit',
   templateUrl: 'book-edit.component.html',
-  styleUrls: ['book-edit.component.css']
+  styleUrls: ['book-edit.component.css'],
+  encapsulation: ViewEncapsulation.Native // Native, None, Emulated
 })
 export class BookEditComponent implements OnInit, OnDestroy {
 

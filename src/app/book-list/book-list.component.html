@@ -1,5 +1,5 @@
 <p [hidden]="isHidden">
-  <a (click)="handleClick()">{{title | shoutPipe:"Titel: ":"!!!"}}</a> works!
+  <a (click)="handleClick()" tooltip tooltip-title="Mein Tooltip :)!">{{title | shoutPipe:"Titel: ":"!!!"}}</a> works!
 </p>
 
 <div *ngFor="let book of books">

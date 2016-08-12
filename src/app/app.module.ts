@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { ShoutPipePipe } from './shared/shout-pipe.pipe';
+import { Tooltip } from './shared/tooltip.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    ShoutPipePipe
+    ShoutPipePipe,
+    Tooltip
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import 'rxjs/add/observable/of';
 
 import { Book } from '../shared';
 
@@ -45,10 +46,7 @@ export class BookDataService {
   constructor() { }
 
   getBooks(): Observable<Book[]> {
-    let oberservable = new Observable<Book[]>(observer => {
-      observer.next(this.books);
-      observer.complete();
-    });
+    let oberservable = Observable.of(this.books);
 
     return oberservable;
   }

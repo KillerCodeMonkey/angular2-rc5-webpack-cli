@@ -2,7 +2,7 @@
   <a (click)="handleClick()" tooltip tooltip-title="Mein Tooltip :)!">{{title | shoutPipe:"Titel: ":"!!!"}}</a> works!
 </p>
 
-<div *ngFor="let book of books">
+<div *ngFor="let book of books" (click)="navigateTo(book.isbn)">
   <h3>{{book.title}}</h3>
   <small>{{book.author}} ({{book.isbn}})</small>
 </div>

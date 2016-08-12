@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Book, BookDataService } from '../shared';
 
@@ -17,7 +18,7 @@ export class BookListComponent implements OnInit, OnDestroy {
   x = 0;
   y = 0;
 
-  constructor(private bookData: BookDataService) {
+  constructor(private bookData: BookDataService, private router: Router) {
     this.booksObservable = this.bookData.getBooks();
   }
 
@@ -27,6 +28,10 @@ export class BookListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  navigateTo(isbn: string) {
+    this.router.navigate(['/books', isbn]);
   }
 
   mouseMoveHandle({

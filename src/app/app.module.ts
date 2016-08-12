@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { ShoutPipePipe } from './shared/shout-pipe.pipe';
 import { Tooltip } from './shared/tooltip.directive';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     ShoutPipePipe,
-    Tooltip
+    Tooltip,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

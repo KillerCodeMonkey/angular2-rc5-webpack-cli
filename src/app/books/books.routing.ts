@@ -21,11 +21,11 @@ const routes: Routes = [{
   }, {
     path: ':isbn/edit',
     component: BookEditComponent
-  }, {
-    path: '',
-    redirectTo: '/books',
-    pathMatch: 'full'
   }]
+}, {
+  path: '**',
+  redirectTo: '/books',
+  pathMatch: 'full'
 }];
 
 export const routing = RouterModule.forChild(routes);

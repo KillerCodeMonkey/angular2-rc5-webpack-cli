@@ -21,10 +21,11 @@ import { BookDataService, ShoutPipePipe, Tooltip } from './shared';
   ],
   declarations: [
     ShoutPipePipe,
-    Tooltip,
-    BookListComponent,
-    BookEditComponent,
-    BookDetailComponent
+    Tooltip
+    // Routing components are not needed to declared!
+    // BookListComponent,
+    // BookEditComponent,
+    // BookDetailComponent
   ],
   providers: [
     BookDataService,

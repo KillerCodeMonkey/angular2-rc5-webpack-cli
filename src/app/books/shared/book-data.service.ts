@@ -48,13 +48,13 @@ export class BookDataService {
 
   getBooks(): Observable<Book[]> {
     return this.http
-      .get('http://localhost:4730/books')
+      .get('http://localhost:4730/books', {body: ''})
       .map(response => response.json());
   }
 
   getBookByIsbn(isbn: string): Observable<Book> {
     return this.http
-      .get(`http://localhost:4730/books/${isbn}`)
+      .get(`http://localhost:4730/books/${isbn}`, {body: ''})
       .map(response => response.json());
   }
 }
